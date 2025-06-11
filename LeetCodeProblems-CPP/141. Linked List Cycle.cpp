@@ -3,12 +3,8 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        
-        if(!head || !(head -> next)){
+        if (head == nullptr) {
             return false;
-        }
-        if(head == head -> next){
-            return true;
         }
 
         ListNode* slow = head;
@@ -17,6 +13,7 @@ public:
         while(fast && fast -> next){
             slow = slow -> next;
             fast = fast -> next -> next;
+
             if(slow == fast){
                 return true;
             }
